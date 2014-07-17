@@ -1,5 +1,5 @@
-Dropout
-=======
+Dropout For Neural Networks
+===========================
 
 Papers:
 
