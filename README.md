@@ -1,4 +1,4 @@
-ML-and-Math-notes
+notes
 =================
 
-Notes about Machine Learning and Math related things. Most likely code too!
+About anything and everything.
