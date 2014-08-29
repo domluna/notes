@@ -86,7 +86,7 @@ Steps:
 
 "Gradual loss of available computer memory." 
   
-![Think death by spoon](https://www.youtube.com/watch?v=9VDvgL58h_Y)
+[Think death by spoon](https://www.youtube.com/watch?v=9VDvgL58h_Y)
 
 ## Performance Tools
 
