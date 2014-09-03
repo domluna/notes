@@ -1,6 +1,8 @@
 
 DP ~= careful brute force
+
 DP ~= guessing + recursion + memoization
+
 DP ~= dividing into reasonable # subproblems whose solutions relate to the guessing part of the solution
 
 time = # subproblems x time/subproblem
