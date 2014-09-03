@@ -3,7 +3,8 @@ js memory masterclass notes
 
 ## Source
 
-https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass
+[Slides](https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass)
+[Video](https://www.youtube.com/watch?v=LaxbdIyBkL0&list=UU_x5XG1OV2P6uZZ5FSM9Ttw)
 
 ## Good rules to follow
 
