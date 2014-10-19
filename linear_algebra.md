@@ -153,3 +153,8 @@ A function mapping matrices to real scalars. The determinant is equal to the pro
 a matrix's eigenvalues. The absolute value of the determinant can be thought of as a measure
 of how much multiplication by the matrix expands or contracts space.
 
+## More Stuff
+
+Given coeffs b1,b2,....bn is b1 + b2 + ... + bn = 1 then we call that an *affine combination*.
+If the numbers are nonnegative it's called a *convex combination*.
+
