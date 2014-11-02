@@ -1,7 +1,7 @@
 Linearity of Expectation
 ========================
 
-It's actually pretty elegant and straightforward
+It's actually pretty elegant and straightforward.
 
 g(X) is some function, X is some random variable.
 
@@ -16,5 +16,3 @@ then
 E[g(X)] = g(E[X])
 
 and that is the linearity of expectation.
-
-
