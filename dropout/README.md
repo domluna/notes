@@ -2,9 +2,8 @@ Dropout For Neural Networks
 ===========================
 ## Summary
 
-
-
-Dropout takes 2-3x longer to train than regular nets. Due to noisy parameter updates, effectively training new network each case. Gradients being computed are not gradients of final architecture at test time.
+Dropout takes 2-3x longer to train than regular nets. Due to noisy parameter updates, effectively training new network each case. 
+Gradients being computed are not gradients of final architecture at test time.
 
 Dropout reduces overfitting.
 
