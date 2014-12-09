@@ -29,38 +29,38 @@ The example below shows that if the underlying data is a pointer we can
 just pass things around by value.
 
 ```go
-        package main
+package main
 
-        import "fmt"
+import "fmt"
 
-        type blob struct {
-	        cap int
-	        data []int
-        }
+type blob struct {
+	cap int
+	data []int
+}
 
-        func newBlob(cap int) blob {
-	        return blob{
-		        cap: cap,
-		        data: make([]int, cap),
-	        }
-        }
+func newBlob(cap int) blob {
+	return blob{
+		cap: cap,
+		data: make([]int, cap),
+	}
+}
 
-        func mutateDataFunc(b blob) {
-	        b.data[0] = 500
-        }
+func mutateDataFunc(b blob) {
+	b.data[0] = 500
+}
 
-        func (b blob) mutateDataMethod() {
-	        b.data[0] = 250
-        }
+func (b blob) mutateDataMethod() {
+	b.data[0] = 250
+}
 
-        func main() {
-	        b := newBlob(10)
-	        fmt.Println(b)
-	        mutateDataFunc(b)
-	        fmt.Println(b)
-	        b.mutateDataMethod()
-	        fmt.Println(b)
-        }
+func main() {
+	b := newBlob(10)
+	fmt.Println(b)
+	mutateDataFunc(b)
+	fmt.Println(b)
+	b.mutateDataMethod()
+	fmt.Println(b)
+}
 ```
 
 Output:
