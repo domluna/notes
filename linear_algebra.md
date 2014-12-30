@@ -158,3 +158,5 @@ of how much multiplication by the matrix expands or contracts space.
 Given coeffs b1,b2,....bn is b1 + b2 + ... + bn = 1 then we call that an *affine combination*.
 If the numbers are nonnegative it's called a *convex combination*.
 
+Outer product refers to the product of two vectors producing a matrix, ex: nx1 by 1xn. Inner product refers to the product procuding a scalar, 1xn by nx1.
+
