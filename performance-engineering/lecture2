@@ -1,0 +1,68 @@
+Bently Rules
+------------
+
+http://stellar.mit.edu/S/course/6/fa14/6.172/courseMaterial/topics/topic4/lectureNotes/Lecture_2_-_Bentley_Rules/Lecture_2_-_Bentley_Rules.pdf
+
+
+
+
+
+A) Data structures
+
+
+
+
+1. Packing and Encoding
+
+packing - store more than 1 data value in a machine word
+encoding - convert data values into a repr requiring fewer bits
+
+A word is 32 bits. 
+
+Typical dates like "February 14, 2008" take 19 bytes (terminating char included)
+or 3 double words (64 bit).
+
+19 * 8 = 152 bits
+
+if we assume we only need 4096 years and each year has 365.25 days
+
+then we need 4096 * 365.25 = ~1.5M ~= 1.5 * 10^6.
+
+This requires lg(1.5 * 10^6) = 21 bits to encode.
+
+2. Augmentation
+
+Add information to the data structure to make common ops do less work.
+
+In a linked list with 1 pointer to the head to add an element to the end
+we need to walk the entire length of the list.
+
+We add a pointer to the tail to make this op take less time.
+
+3. Precomputation
+
+Perform calcs now so we do less work later.
+
+4. Caching
+
+Store recently used results so they don't need to be recomputed.
+
+5. Lazy Evaluation
+
+Computes calc ONLY when needed. Essentially precomputing + caching.
+
+6. Sparsity
+
+Avoid storing/computing with 0s. 0s add nothing to the computation!
+
+
+
+
+
+B) Logic
+
+
+TODO: more notes
+
+1. 
+

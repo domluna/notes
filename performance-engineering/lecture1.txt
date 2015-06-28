@@ -1,0 +1,69 @@
+http://stellar.mit.edu/S/course/6/fa14/6.172/courseMaterial/topics/topic4/lectureNotes/mxm/mxm.pdf
+
+Matrix multiplication, naive O(n^3) algorithm
+
+How to calculate flops?
+
+peak flops = chips * cores * double-precision operations per core/cycle * clock freq 
+
+So for our example we have 2 * 8 * 8 * 2.4 * 10^9 = 307 GFLOPS
+
+If software doesn't take advantage of modern hardware then it's difficult to reach anything
+near peak performance.
+
+Our most optimized C program is getting 0.322 GLOPS or 0.10% of the peak performance (compiled with -O3!).
+
+Our cache hit rate is 0.81%! (SUPER BAD)
+
+Cache hits/misses are SUPER important.
+
+Modern hardware has something like P (processor) -> L1 cache -> L2 cache -> L3 cache -> DRAM
+
+~latency (clock cycles)
+
+P -> 1 
+L1 -> 4
+L2 -> 10
+L3 -> 26
+DRAM -> 200
+
+Why is our hit rate so bad?
+
+Our data access is sparse is one of the matrices. Therefore, we don't have good
+data reuse, evicting elements from our cache. Transposing the matrix at fault
+solves this.
+
+We get a 60.35% hit rate now!
+
+Why not higher though?
+
+While our data access patterns are much better, we're still cycling through a lot
+of elements per row fill in on the result matrix.
+
+A * B = C
+
+For a row of C:
+A = 1024*384
+B = 384*1
+C = 1x1024
+
+That's 394,524 accesses per row.
+
+Each element of B is reused after 394,525 accesses.
+
+With a tiled approach:
+
+A = 32*384
+B = 384*32
+C = 32*32
+
+That's 25,600 accesses per row.
+
+Each element reused after 65 accesses.
+
+99.70% hit rate
+
+Uses this method divide and conquer method + parallel loop we get
+1/3 of peak performance, ~96.666 GLOPS.
+
+Adding machine specific compilation and AVX intrinsics we get up to 67.15% of peak!
