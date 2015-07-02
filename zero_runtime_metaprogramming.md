@@ -23,17 +23,11 @@ Trace-based compilation also has issues. Programs with many unbiased branches
 can result cause trace explosion and performance degrades rapidly. Another issue
 is integrating tracing into multi-tier JITs.
 
-## Dispatch Chains
+### Misc
 
-Polymorphic inline caches.
+Polymorphic inline caches. Keep a cache of the argument types a method is called
+with. Essentially we're using a specialized method for particular argument types.
+This avoids looking up the method several times with similar arguments.
 
-Idea is to have a cache called a dispatch chain which keeps track of methods
-being called so that reflecive properties don't have to be recomputed on each
-call.
-
-Also it seems Metaprogramming in the context of the paper is doing reflection
-type things such as method/field getters. So it doesn't cover the Lisp type of 
-Metaprogramming.
-
-The main insight is that dispatch chains can be used to remove the overhead of reflective
-operations and MOPs.
+Dispatch chains generalize this behaviour to more than methods and provide a mechanism
+to cache arbitrary values as part of AST nodes. 
